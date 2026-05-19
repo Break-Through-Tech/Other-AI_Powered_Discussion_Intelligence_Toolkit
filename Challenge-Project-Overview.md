@@ -15,16 +15,22 @@
 > 
 > ---
 >
-> ### 🔍 SME Feedback from the BTT Evaluation Team
->
-> *Please address the following by editing this page:*
->
-> - See advisor feedback section below for detailed technical adjustments.
-> - [Additional feedback item]
-> - [Additional feedback item]
->
-> ---
->
+### 🔍 SME Feedback from the BTT Evaluation Team
+
+*(This section is for BTT staff only — remove before sharing with students)*
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| Python Compatibility | 🟢 | The tech stack is entirely centered on Python, leveraging popular libraries for machine learning and NLP. |
+| Data Readiness | 🟢  | The datasets are indicated to be under 1GB, suggesting they are manageable and ready for use without extensive cleaning. |
+| Resource Check | 🟢  | The project utilizes Google Colab, which is accessible to students. Although it includes GPU access, this is available through the free tier. |
+
+**Student Fit Score:** 8/10  
+**Technical Depth Score:** 7/10  
+**Overall Recommendation:** APPROVE
+
+**Advisor Feedback Draft:**
+This project presents a strong application of modern NLP techniques. However, consider simplifying some aspects of the model training process to ensure students can fully engage with the content. Additionally, clarify how clustering results will be interpreted and used in the context of structured reports. Encourage focusing on robust evaluation metrics for the models tracked over time.
 
 ---
 
