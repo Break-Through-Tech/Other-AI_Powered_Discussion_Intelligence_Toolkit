@@ -159,9 +159,9 @@ Please bring any questions to our first meeting during the week of August 24th (
 
 | Check | Status | Notes |
 |-------|--------|-------|
-| Python Compatibility | GREEN | The tech stack is entirely centered around Python, leveraging popular libraries suitable for machine learning and NLP tasks. |
-| Data Readiness | GREEN | The datasets are indicated to be under 1GB, suggesting they are manageable and ready for use without extensive cleaning. |
-| Resource Check | GREEN | The project utilizes Google Colab, which is accessible to students. Although it includes GPU access, this is available through the free tier. |
+| Python Compatibility | 🟢 | The tech stack is entirely centered on Python, leveraging popular libraries for machine learning and NLP. |
+| Data Readiness | 🟢  | The datasets are indicated to be under 1GB, suggesting they are manageable and ready for use without extensive cleaning. |
+| Resource Check | 🟢  | The project utilizes Google Colab, which is accessible to students. Although it includes GPU access, this is available through the free tier. |
 
 **Student Fit Score:** 8/10  
 **Technical Depth Score:** 7/10  
