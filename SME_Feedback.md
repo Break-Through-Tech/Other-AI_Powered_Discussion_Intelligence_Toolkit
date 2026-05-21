@@ -12,5 +12,8 @@ To ensure our Machine Learning Foundations fellows hit their milestones smoothly
 These small guardrails will preserve the mathematical rigor of your original design while protecting the fellows from programmatic friction, letting them focus entirely on the core machine learning concepts.
 
 Let me know your thoughts on integrating these into the starter code or notebook instructions. Looking forward to a fantastic semester ahead!
-Thanks.
+
+Thanks,
+
+Dr. Uohna
 
