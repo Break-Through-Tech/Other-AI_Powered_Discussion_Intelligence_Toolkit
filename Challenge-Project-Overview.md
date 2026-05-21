@@ -29,7 +29,6 @@
 **Advisor Feedback Draft:**
 This project presents a strong application of modern NLP techniques. However, consider simplifying some aspects of the model training process to ensure students can fully engage with the content. Additionally, clarify how clustering results will be interpreted and used in the context of structured reports. Encourage a focus on robust evaluation metrics for models tracked over time.
 
-[Detailed SME Project Feedback](./SME_Feedback.md)
 ---
 
 # Discussion Intelligence Toolkit
