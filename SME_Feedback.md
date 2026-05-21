@@ -1,4 +1,5 @@
 Hi Tom,
+
 Thank you again for putting together such a comprehensive and industry-relevant project blueprint for the Fall 2026 AI Studio. The stack you’ve designed, combining fine-tuned DistilBERT models with vector embeddings and LLM synthesis, is a great example of the kind of high-impact work that will make our fellows stand out.
 
 To ensure our Machine Learning Foundations fellows hit their milestones smoothly without getting bogged down by computational bottlenecks or free-tier Google Colab timeouts, I wanted to propose three small, practical guardrails for the workflow:
