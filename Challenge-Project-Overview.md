@@ -17,8 +17,6 @@
 >
 ### 🔍 SME Feedback from the BTT Evaluation Team
 
-*(This section is for BTT staff only — remove before sharing with students)*
-
 | Check | Status | Notes |
 |-------|--------|-------|
 | Python Compatibility | 🟢 | The tech stack is entirely centered on Python, leveraging popular libraries for machine learning and NLP. |
@@ -32,6 +30,7 @@
 **Advisor Feedback Draft:**
 This project presents a strong application of modern NLP techniques. However, consider simplifying some aspects of the model training process to ensure students can fully engage with the content. Additionally, clarify how clustering results will be interpreted and used in the context of structured reports. Encourage focusing on robust evaluation metrics for the models tracked over time.
 
+🔍 Detail SME Project Feedback
 ---
 
 # Discussion Intelligence Toolkit
