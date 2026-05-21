@@ -15,7 +15,7 @@
 > 
 > ---
 >
-### 🔍 [SME Feedback from the BTT Evaluation Team]()
+### 🔍 [SME Feedback from the BTT Evaluation Team](https://github.com/Break-Through-Tech/Other_AI_Powered_Discussion_Intelligence_Toolkit/blob/main/SME_Feedback.md)
 
 | Check | Status | Notes |
 |-------|--------|-------|
