@@ -57,7 +57,8 @@ Training happens once on labeled corpora. Inference should run on new threads wi
 | `README.md` | Living project home, progress log, and final portfolio artifact | Fellows |
 | `notebooks/` | EDA, modeling, evaluation, and demo notebooks | Fellows |
 | `data/` | Small metadata files, data dictionaries, or links to external datasets | Fellows |
-| `requirements.txt` | Python dependencies needed to reproduce the project | Fellows |
+| `pyproject.toml` / `uv.lock` | Python package metadata, dependency groups, and locked environment once package scaffolding is added | Fellows |
+| `requirements.txt` | Legacy scaffold file from the template; migrate dependencies to `pyproject.toml` and `uv.lock` before adding project packages | Fellows |
 | `.gitignore` | Files that must stay out of version control | Fellows |
 
 As the toolkit grows, use package and test directories such as `src/` and `tests/` rather than keeping production code only in notebooks.
@@ -88,22 +89,29 @@ Replace or refine these bullets with measured results once the team has them.
 
 ## Setup and Installation
 
-Document the exact setup once dependencies and package structure are finalized. The expected development path is:
+Use `uv` for local Python environments, dependency management, and project commands. Do not install project dependencies with `pip` directly.
 
 ```bash
 git clone https://github.com/Break-Through-Tech/Other-AI_Powered_Discussion_Intelligence_Toolkit.git
 cd Other-AI_Powered_Discussion_Intelligence_Toolkit
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
+uv sync
+uv run python -m ipykernel install --user --name discussion-intelligence
 ```
 
-For Colab, use notebook setup cells instead of a local virtual environment. Keep setup instructions reproducible: every package import used by notebooks or source code must appear in `requirements.txt` or in clearly documented Colab install cells.
+Once the package structure exists, common commands should use `uv run`:
+
+```bash
+uv run pytest
+uv run python -m discussion_intelligence
+```
+
+For Colab, keep notebook setup cells aligned with the locked `uv` environment. If Colab needs one-off install cells before the package is fully scaffolded, mirror every dependency in `pyproject.toml` and refresh `uv.lock` locally so the repo remains reproducible.
 
 ## Development Workflow
 
 - Use GitHub issues for tasks, questions, bugs, and experiment follow-ups.
 - Use branches for substantial changes.
+- Use `uv add`, `uv remove`, `uv sync`, and `uv run` for Python dependency and command workflows.
 - Keep notebooks runnable from top to bottom.
 - Move reusable code from notebooks into Python modules when it is used in more than one place.
 - Record major design decisions in this README or a linked design note.
