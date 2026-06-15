@@ -88,14 +88,20 @@ Replace or refine these bullets with measured results once the team has them.
 
 ## Setup and Installation
 
-Document the exact setup once dependencies and package structure are finalized. The expected development path is:
+Use `uv` for local Python environments, dependency management, and project commands. Do not install project dependencies with `pip` directly.
 
 ```bash
 git clone https://github.com/Break-Through-Tech/Other-AI_Powered_Discussion_Intelligence_Toolkit.git
 cd Other-AI_Powered_Discussion_Intelligence_Toolkit
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
+uv sync
+uv run python -m ipykernel install --user --name discussion-intelligence
+```
+
+Once the package structure exists, common commands should use `uv run`:
+
+```bash
+uv run pytest
+uv run python -m discussion_intelligence
 ```
 
 For Colab, use notebook setup cells instead of a local virtual environment. Keep setup instructions reproducible: every package import used by notebooks or source code must appear in `requirements.txt` or in clearly documented Colab install cells.
