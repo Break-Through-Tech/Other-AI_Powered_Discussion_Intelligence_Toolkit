@@ -1,5 +1,3 @@
----
-
 # Discussion Intelligence Toolkit
 
 **Company / Org:** Break Through Tech  
