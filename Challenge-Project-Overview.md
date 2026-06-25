@@ -1,36 +1,5 @@
 ---
 
-> ## Challenge Advisor: Update & Finalize Your Project Overview
->
-> > 💡 **These grey text instructions are just for you, the team's Challenge Advisor; please delete them once you have completed the steps below.**
->
-> We've pre-populated this Challenge Project Overview page — which is what will be shared with your Break Through Tech student team in August — using the details from your submission form. In order for your project to be finalized and assigned to a team, please:
->
-> 1. **Send us your GitHub username** so we can add you as a Collaborator to this repo, which will enable you to make edits. If you don't have a username, you can create a free account [here](https://github.com/signup). Once you are ready to share your username, simply reply to the email that sent you to this repo. Once we receive your GitHub username, you will get an email inviting you to join this repo as a Collaborator and can begin making edits. 
-> 2. **Review all sections below** and update or expand any content as needed, making sure to address the SME Feedback in the section immediately below. Look for square brackets to find the places below that require additional inputs from you (e.g., "About [Company / Org Name]").  
-> 3. **Add your dataset** to the [data folder](data) in this repo.
-> 4. **Close the Issue assigned to you in this repo** to let us know that you have made your edits and the overview page is ready for final review. You can do this by going to the _Issues_ tab in the top left section of the menu above, add a comment that says "CA review complete", and click the button to Close the Issue. 
->
-> If you're unfamiliar with how to edit a page like this in GitHub, check out [this tutorial](https://ubc-lib-geo.github.io/gis-workshop-waml-template/content/handson/edit-readme.html) for a quick overview (start with step 2 and only edit this page), and [this guide](https://ubc-lib-geo.github.io/gis-workshop-waml-template/content/markdown.html) on how to use Markdown to compose text. 
-> 
-> ---
->
-### 🔍 SME Feedback from the BTT Evaluation Team 
-| Check | Status | Notes |
-|-------|--------|-------|
-| Python Compatibility | 🟢 | The tech stack is entirely centered on Python, leveraging popular libraries for machine learning and NLP. |
-| Data Readiness | 🟢  | The datasets are indicated to be under 1GB, suggesting they are manageable and ready for use without extensive cleaning. |
-| Resource Check | 🟢  | The project utilizes Google Colab, which is accessible to students. Although it includes GPU access, this is available through the free tier. |
-
-**Student Fit Score:** 8/10  
-**Technical Depth Score:** 7/10  
-**Overall Recommendation:** APPROVE
-
-**Advisor Feedback Draft:**
-This project presents a strong application of modern NLP techniques. However, consider simplifying some aspects of the model training process to ensure students can fully engage with the content. Additionally, clarify how clustering results will be interpreted and used in the context of structured reports. Encourage a focus on robust evaluation metrics for models tracked over time.
-
----
-
 # Discussion Intelligence Toolkit
 
 **Company / Org:** Break Through Tech  
@@ -41,118 +10,202 @@ This project presents a strong application of modern NLP techniques. However, co
 
 ## 🏢 About Break Through Tech
 
-Break Through Tech is dedicated to increasing the representation of women and underrepresented groups in technology through training, job placement, and community building activities. Our initiatives span across various industries and aim to equip individuals with the necessary skills to thrive in a tech-focused environment.
+Break Through Tech increases the representation of women and underrepresented groups in technology through training, mentorship, job placement, and community building. This project gives fellows a chance to build a real NLP system with clear technical scope, measurable outcomes, and a public portfolio artifact they can explain to future employers.
 
 ---
 
 ## 🎯 The Challenge
 
 ### Project Summary
-An open-source Python toolkit designed to transform raw asynchronous conversations (such as Discord threads or GitHub conversations) into structured insight reports. The toolkit uses transformer-based classifiers for discourse act tagging, clustering for topic discovery, and retrieval-augmented LLM synthesis to produce reports that highlight key arguments and consensus.
+Build an open-source Python toolkit that converts long asynchronous discussions into structured, evidence-linked insight reports. The target inputs are threaded conversations such as Reddit threads, GitHub discussions, forum posts, or Discord-style exports. The target outputs are reports that identify the main claims in a discussion, group related comments, score discussion quality, and generate grounded summaries that cite specific source comments.
+
+### Why This Matters
+Long online discussions contain useful product, research, and community signal, but the signal is expensive to extract manually. This project turns that unstructured discussion data into a workflow that can support synthesis, moderation, community analysis, and retrospective reporting.
+
+### December Deliverables
+- An installable Python toolkit, not only notebooks
+- A reproducible end-to-end pipeline from raw thread input to final report
+- Evaluation results for each major component
+- At least one demo notebook or script that runs on student-accessible compute
+- A portfolio-ready repository with documentation, results, and example outputs
 
 ### Success Criteria
-The production of structured insight reports that highlight high-quality arguments and link them to supporting comments, along with model evaluation results and a demo-ready portfolio artifact.
+By the end of the semester, the team should be able to demonstrate:
+- Ingestion of a threaded discussion into a canonical schema
+- Discourse-act or conversation-role labeling on individual utterances
+- Quality or usefulness scoring for comments, claims, or discussion segments
+- Topic clustering that helps organize large discussions into interpretable themes
+- Retrieval of supporting comments for important claims or report sections
+- A final insight report in which major claims link back to specific source utterances
+- Clear evaluation results, error analysis, and documented limitations
+
+### Technical Scope
+The project should be organized into the following components:
+1. **Connector / ingestion layer** for threaded discussion data
+2. **Canonical schema** for conversations, utterances, and speakers
+3. **Discourse classification** for acts such as question, answer, agreement, disagreement, humor, or elaboration
+4. **Quality scoring** for arguments, comments, or discussion segments
+5. **Embedding + clustering** for topic discovery and report organization
+6. **Retrieval** for finding evidence relevant to a report section or generated claim
+7. **LLM synthesis** for generating a structured report grounded in retrieved evidence
+
+### Recommended Modeling Progression
+Start with simple baselines and add complexity only when evaluation shows a clear benefit:
+1. Majority-class or constant-score baseline
+2. TF-IDF plus a linear model
+3. Sentence-transformer embeddings plus a simple classifier, regressor, or clustering method
+4. A compact transformer such as DistilBERT for supervised tasks
+5. Retrieval-grounded LLM synthesis after evidence extraction is working
+
+This ordering keeps the project tractable and addresses the evaluation team's request to simplify training work before moving to more complex modeling.
 
 ### Project Milestones
 
-Use these milestones to guide your work. Your team will create a **GitHub Projects board** to track tasks within each milestone.
+Use these milestones to guide your work. Your team should maintain a GitHub Projects board to break these monthly goals into weekly tasks.
 
-| Month      | Milestone                  | Key Activities                                                      |
-|------------|----------------------------|--------------------------------------------------------------------|
-| **September** | Data Understanding         | Explore dataset, handle missing values, document findings         |
-| **October**   | Model Development          | Train baseline model, experiment with approaches, iterate         |
-| **November**  | Evaluation & Presentation   | Finalize model, prepare presentation, document results            |
-| **December**  | Implementation & Wrap Up    | Produce final insights, deliver demo-ready artifact              |
+| Month | Focus | Expected Outcomes |
+|---|---|---|
+| **September** | Data understanding and baselines | Dataset selection, reconstructed thread schema, exploratory analysis, baseline models, first evaluation harness |
+| **October** | Modeling | Discourse classifier, quality scorer, embedding experiments, clustering experiments, initial error analysis |
+| **November** | Integration | End-to-end pipeline, evidence retrieval, report schema, grounded LLM synthesis, package structure |
+| **December** | Polish and presentation | Final demo, final results tables, documented limitations, portfolio-ready repository and walkthrough |
 
-> **Note for the team:** Please create a GitHub Projects board in this repository to break these milestones into weekly tasks. Go to the **Projects** tab → **New project** → Choose **Board** → Add columns for each month.
+> **Note for the team:** Create a GitHub Projects board in this repository and track work by issue. Recommended columns: Backlog, This Week, In Progress, In Review, Done.
 
 ---
 
 ## 📊 Dataset
 
-**Name and Source:** [e.g., Dataset name and where it's from]  
-**Format:** CSV  
-**Size:** under 1gb  
-**Location:** [Link to dataset or instructions for accessing it]
+### Primary Recommended Data Sources
 
-### Key Details
-- The project utilizes datasets consisting of approximately 115,000 utterances for discourse classification and 43,000 utterances for argument quality scoring, potentially sourced from Discord exports, forum dumps, or podcast transcripts.
-- [Any known limitations or preprocessing needed]
-- [Link to data dictionary or documentation, if available]
+| Dataset / Source | Purpose in Project | Format | Access |
+|---|---|---|---|
+| **ConvoKit Coarse Discourse Corpus** | Supervised discourse-act classification on Reddit-style conversations | ConvoKit corpus / JSON-like utterance records | https://convokit.cornell.edu/documentation/ |
+| **ConvoKit conversation corpora such as CGA / ChangeMyView-derived discussions** | Quality, argumentation, or discussion-outcome modeling | ConvoKit corpus / JSON-like utterance records | https://convokit.cornell.edu/documentation/ |
+| **Public Reddit thread archives or filtered Pushshift-style Reddit exports** | End-to-end ingestion, clustering, retrieval, and report generation | JSON / JSONL / CSV after preprocessing | Team should document exact source and subset used in `README.md` |
+
+### Working Dataset Expectations
+- Do **not** try to process the full public Reddit archive. Select a domain-specific subset that fits a student workflow.
+- Keep the working dataset for notebooks and experiments small enough to run on Google Colab free-tier hardware. As a rule of thumb, filtered working subsets should stay around or below 1 GB after selection and preprocessing.
+- Use the `data/` folder for small metadata files, data dictionaries, sample records, and access notes. Do not commit large raw archives, private data, API keys, or model checkpoints.
+
+### Known Preprocessing and Data Risks
+- Reconstruct reply trees so every utterance keeps parent-child context.
+- Normalize deleted, removed, empty, or orphaned comments consistently.
+- Standardize speaker IDs, thread IDs, timestamps, and utterance IDs.
+- Clean markdown, URLs, emojis, and quote formatting without removing argumentative signal.
+- Expect domain shift: corpora used for supervised labels may not match the target discussion source used for the demo.
+
+### Data Documentation the Team Must Produce
+- Exact source URLs for every dataset actually used
+- A short data dictionary for the canonical schema
+- Counts for threads, utterances, speakers, and labels retained after filtering
+- The train/dev/test split strategy and leakage controls
+- A note explaining any licensing or platform usage constraints for the selected data
 
 ---
 
 ## 🛠️ Suggested Approach
 
-**ML Problem Type:** NLP
+**ML Problem Type:** NLP / information extraction / retrieval / grounded summarization
 
-**Recommended Libraries:**
+**Recommended Libraries and Tools:**
 - Python
-- DistilBERT
-- TensorFlow
-- Keras
-- Hugging Face (TF backend)
+- pandas and NumPy
 - scikit-learn
-- NumPy
+- Hugging Face Transformers
 - sentence-transformers
-- FAISS or Chroma
-- Google Colab
+- ConvoKit
+- FAISS or Chroma for retrieval
+- Google Colab for experiments
+- `uv` for reproducible local Python environments
 
-**Evaluation Metrics:**
-- Accuracy
-- Precision/Recall
-- BLEU score
+### Recommended Report Structure
+Each generated insight report should aim to include:
+- The main themes or clusters in the discussion
+- The strongest claims or arguments within each theme
+- Evidence links to the supporting utterances
+- Signals about consensus, disagreement, open questions, or unresolved tension
+- A short grounded summary with citations to source comments
+
+### How Clustering Should Be Used
+Clustering is not the final product by itself. Use it to:
+- group related comments into interpretable themes
+- help organize long threads before summarization
+- surface repeated concerns or recurring claims
+- separate consensus areas from disagreement-heavy areas
+- make final reports easier to navigate for a reader
+
+### Evaluation Metrics
+Use metrics that match each component:
+
+| Component | Primary Metrics | What the Metric Checks |
+|---|---|---|
+| Discourse-act classifier | Macro F1, per-class F1, confusion matrix | Whether minority labels are handled well |
+| Quality scorer | MAE, Spearman correlation | Whether predicted scores match both level and ranking |
+| Topic clustering | Silhouette score plus sampled coherence review | Whether clusters are separated and interpretable |
+| Retrieval | Recall@k on hand-written thread questions | Whether supporting evidence can be recovered |
+| LLM synthesis | Claim coverage, evidence-link accuracy, hallucination rate | Whether reports are useful and grounded |
 
 ---
 
 ## 📚 Resources to Get Started
 
-The following resources will help your team understand the problem space and potential technical approaches for this project:
+The resources below are enough to start productively without overloading the first month.
 
-**Background Reading:**
-- [Link to an article or blog post about the problem domain]
-- [Link to an industry report or case study]
+**Background Reading**
+- ConvoKit documentation and corpus model: https://convokit.cornell.edu/documentation/
+- Sentence-BERT paper: https://arxiv.org/abs/1908.10084
 
-**Technical Tutorials:**
-- [Link to a free tutorial on the ML technique(s) involved]
-- [Link to documentation for a key library or tool]
+**Technical Tutorials**
+- Hugging Face text classification tutorial: https://huggingface.co/docs/transformers/tasks/sequence_classification
+- Sentence Transformers documentation: https://www.sbert.net/
+- scikit-learn clustering guide: https://scikit-learn.org/stable/modules/clustering.html
 
-**Code Examples:**
-- [Link to a relevant GitHub repo]
-- [Link to a sample implementation or starter code]
+**Code Examples**
+- ConvoKit GitHub repository: https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit
+- Hugging Face text classification notebook example: https://colab.research.google.com/github/huggingface/notebooks/blob/main/examples/text_classification.ipynb
 
-**Other:**
-- [Links to any additional resources — e.g., papers, videos, podcasts, etc.]
+**Project Management**
+- GitHub Projects documentation: https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects
 
-*Feel free to explore beyond these, and share anything interesting you find with me!*
+**Other Useful References**
+- sentence-transformers GitHub repository: https://github.com/huggingface/sentence-transformers
+- Hugging Face task overview for text classification: https://huggingface.co/tasks/text-classification
 
 ---
 
 ## 🤝 How We'll Work Together
 
-**Check-ins:** During our biweekly 60-min AI Studio Lab Section meeting block (2nd and 4th week of every month)  
+**Check-ins:** During our biweekly 60-minute AI Studio Lab Section meeting block (2nd and 4th week of every month)  
 **Communication:** Slack (Break Through Tech workspace) or email  
-**Response time:** Within 48 hours on weekdays  
+**Response time:** Within 48 hours on weekdays
 
-**Recommended Tools:**
-- **Coding:** Google Colab, VS Code
-- **Collaboration:** GitHub, Notion
+**Recommended Tools**
+- **Coding:** Google Colab, VS Code, Jupyter notebooks
+- **Collaboration:** GitHub Issues, GitHub Projects, Notion
 - **Virtual Meetings:** Zoom, Google Meet
+
+### What I Expect From the Team
+- Keep work visible in GitHub Issues and the GitHub Projects board
+- Record modeling decisions and failed experiments, not only successful ones
+- Move reusable code out of notebooks and into Python modules as the project matures
+- Keep the repository reproducible and organized enough that an external reviewer can run the demo
 
 ---
 
 ## 🚀 Getting Started
 
-1. **Review this overview document** and note any questions for our first meeting
-2. **Begin reviewing the dataset** using the link above
-3. **Read the GitHub Projects documentation** [here](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
-
-I'm excited to work with you!
+1. Read this overview and list your open questions before our first meeting.
+2. Review `README.md` for the evolving technical plan and repository expectations.
+3. Select an initial discussion domain and identify the exact dataset subset you want to use first.
+4. Define the canonical conversation schema you will use across connectors, models, and reports.
+5. Create your GitHub Projects board and open initial issues for data access, EDA, baselines, and evaluation.
 
 ---
 
 ## ❓ Questions?
 
-Please bring any questions to our first meeting, scheduled for the week of August 24th (Break Through Tech's Bridge to Studio - Session B).
+Bring questions to our first meeting during the week of August 24th. Before then, use Slack or email if you hit a blocker on data access, scope, or technical setup.
 
 ---
