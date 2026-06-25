@@ -2,13 +2,13 @@
 
 **Welcome to your AI Studio Challenge Project repository!**
 
-This repo is your team's workspace for Fall 2026 AI Studio. Everything you work on — task planning, notebooks, data, documentation — will live here. Make it your own, use it to collaborate, and consult with your AI Studio Coach and Challenge Advisor if you need help. 
+This repo is your team's workspace for Fall 2026 AI Studio. Everything you work on — task planning, notebooks, data notes, code, and documentation — will live here. Use it as the shared technical record for the project, and bring blockers to your AI Studio Coach or Challenge Advisor early.
 
-If you're not familiar with how GitHub works, or need a refresher, you can find helpful documentation [here](https://docs.github.com/en/get-started).
+If you're not familiar with how GitHub works, or need a refresher, start here: https://docs.github.com/en/get-started
 
-To start adding project tasks aligned with your Challenge Project's monthly milestones, use the Projects tab [here](https://github.com/Break-Through-Tech/fall-ai-studio-2026-challenge-project-template-repo/projects)
+For task tracking, create a GitHub Projects board in this repository and use it to break the monthly milestones in `Challenge-Project-Overview.md` into weekly issues and deliverables. GitHub Projects docs: https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects
 
-> 💡 **Note:** You can delete this file once your team is up and running; it's just here to help you get oriented. 
+> 💡 **Note:** You can delete this file once your team is fully up and running; it is only here to orient you at kickoff.
 
 ---
 
@@ -16,9 +16,9 @@ To start adding project tasks aligned with your Challenge Project's monthly mile
 
 | File/Folder | What Is It? | Creator |
 |-------------|-------------|---------|
-| [Challenge-Project-Overview.md](Challenge-Project-Overview.md) | Project details and guidance from your Challenge Advisor to help your team get started | Challenge Advisor
-| [data](data) | Where project dataset files get stored (e.g., `.csv`, `.json`, `.parquet`, `.zip`) | Challenge Advisor
-| [README.md](README.md) | Where your team will document your project work; this will become the core of your AI Studio portfolio artifact | Fellows
-| [notebooks](notebooks) | Where your team's Jupyter notebooks for exploration, analysis, and modeling get stored (e.g., `.ipynb`) | Fellows
-| [requirements.txt](requirements.txt) | A place to list Python packages your project uses (e.g., `pandas`, `scikit-learn`) | Fellows
-| [gitignore](.gitignore) | A place to list files Git should ignore (e.g., system files like .DS_Store) | Fellows
+| [Challenge-Project-Overview.md](Challenge-Project-Overview.md) | Project brief, technical scope, milestones, resources, and advisor expectations | Challenge Advisor |
+| [data](data) | Small metadata files, data dictionaries, sample records, and dataset access notes; do not treat this as the place for large raw archives or checkpoints | Challenge Advisor / Fellows |
+| [README.md](README.md) | The living project home, progress log, and final public portfolio artifact | Fellows |
+| [notebooks](notebooks) | Jupyter notebooks for exploration, analysis, modeling, and demo flows | Fellows |
+| [requirements.txt](requirements.txt) | Legacy template file; once package scaffolding is added, keep the real environment in `pyproject.toml` and `uv.lock` instead | Fellows |
+| [gitignore](.gitignore) | Files Git should ignore, such as local cache files and system artifacts | Fellows |
